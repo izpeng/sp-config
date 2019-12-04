@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: zuul
+    
+server:  port: 3001
+
+eureka:  client:    service-url:      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+
+#zuul:
+#  routes:#    item-service: /item-serivce/**
+#    user-service: /user-serivce/**
+#    order-service: /order-serivce/**
+    
+    
+zuul:
+  retryable: true
+
+#ribbon:
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 1
+    
+management:  endpoints:    web:      exposure:        include: hystrix.stream
+    
+    
+    
+    
+    
+    
+    
+    
